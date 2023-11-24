@@ -34,7 +34,7 @@ dependencies {
 
 //	testImplementation("com.h2database:h2:2.2.224")
 
-	testImplementation("io.zonky.test:embedded-database-spring-test:2.3.0-CITC1")
+	testImplementation("io.zonky.test:embedded-database-spring-test:2.4.0")
 	testImplementation(platform("io.zonky.test.postgres:embedded-postgres-binaries-bom:15.3.0"))
 	testImplementation("io.zonky.test:embedded-postgres:2.0.4")
 }
