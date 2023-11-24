@@ -10,3 +10,4 @@ spring:
       data-locations:
         - classpath:testdata/dataset.sql
       mode: always
+      

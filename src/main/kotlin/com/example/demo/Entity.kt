@@ -6,10 +6,10 @@ import org.springframework.data.relational.core.mapping.Table
 
 @Table("entity_table")
 data class Entity(
-    @Embedded.Nullable
-    val nestedEntity: NestedEntity,
     @Id
     val id: String,
+    @Embedded.Nullable
+    val nestedEntity: NestedEntity,
 )
 
 data class NestedEntity (
