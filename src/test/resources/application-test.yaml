@@ -1,0 +1,12 @@
+datasource:
+  host: localhost
+  database: ''
+  username: postgres
+  password: ''
+
+spring:
+  sql:
+    init:
+      data-locations:
+        - classpath:testdata/dataset.sql
+      mode: always

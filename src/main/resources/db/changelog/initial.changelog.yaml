@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: initial
+      author: skyVV1sp
+      changes:
+        - createTable:
+            tableName: entity_table
+            columns:
+              - column:
+                  name: id
+                  type: varchar(64)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nested_value
+                  type: varchar(64)

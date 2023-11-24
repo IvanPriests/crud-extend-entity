@@ -1,0 +1,13 @@
+spring:
+  threads:
+    virtual:
+      enabled: true
+  datasource:
+    password: ${datasource.password}
+    hikari:
+      initialization-fail-timeout: 20000
+      maximum-pool-size: 40
+      schema: ${datasource.schema}
+      minimum-idle: 4
+    url: jdbc:postgresql://${datasource.host}:${datasource.port}/${datasource.database}
+    username: ${datasource.username}
