@@ -15,3 +15,6 @@ databaseChangeLog:
               - column:
                   name: nested_value
                   type: varchar(64)
+              - column:
+                  name: time
+                  type: timestamp with time zone
