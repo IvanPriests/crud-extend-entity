@@ -1,1 +1,1 @@
-INSERT INTO entity_table VALUES ('1','some body',current_timestamp);
+INSERT INTO entity_table VALUES ('01G5PC14QZ1DFKAY5MC7VV39WN','some body',current_timestamp);
