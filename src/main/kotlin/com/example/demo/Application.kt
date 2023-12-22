@@ -8,6 +8,7 @@ import org.springframework.context.support.beans
 import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories
 
 @SpringBootApplication
+@EnableJdbcRepositories
 class Application
 
 //object AppInitiolizer:ApplicationContextInitializer<GenericApplicationContext>{

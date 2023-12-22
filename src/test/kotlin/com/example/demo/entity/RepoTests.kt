@@ -1,6 +1,6 @@
 package com.example.demo.entity
 
-import com.example.demo.repo.EntityRepository
+import com.example.demo.repo.TestEntityRepository
 import com.example.demo.test.FullAppContextTest
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test
 
 @FullAppContextTest
 class RepoTests(
-        val repository: EntityRepository
+        val repository: TestEntityRepository
 ) {
     @Test
     fun selectExtended() {

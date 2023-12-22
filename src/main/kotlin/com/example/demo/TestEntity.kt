@@ -8,14 +8,18 @@ import org.springframework.data.relational.core.mapping.Table
 import java.time.Instant
 import java.util.UUID
 
-@Table("entity_table")
-data class Entity(
+@Table(value ="entity_table")
+class TestEntity(
     @Embedded.Nullable
     val nestedEntity: NestedEntity,
+    val time: Instant,
     @Id
     val id: EntityId = EntityId.new(),
-    val time: Instant,
 ) {
+
+    var statusTimestamp: Instant = Instant.EPOCH
+        private set
+
     @PersistenceCreator
     constructor(
         id: Ulid,
@@ -23,8 +27,8 @@ data class Entity(
         nestedEntity: NestedEntity,
     ) : this(
         nestedEntity,
+        time,
         EntityId(id),
-        time
     )
 }
 
@@ -34,7 +38,7 @@ data class NestedEntity(
 
 data class ExtendEntity(
     @Embedded.Nullable
-    val entity: Entity,
+    val entity: TestEntity,
     val extendValue: Int,
 )
 
