@@ -12,9 +12,9 @@ import java.util.UUID
 class TestEntity(
     @Embedded.Nullable
     val nestedEntity: NestedEntity,
-    val time: Instant,
     @Id
-    val id: EntityId = EntityId.new(),
+    val id: TestEntityId = TestEntityId.new(),
+    val time: Instant,
 ) {
 
     var statusTimestamp: Instant = Instant.EPOCH
@@ -27,8 +27,8 @@ class TestEntity(
         nestedEntity: NestedEntity,
     ) : this(
         nestedEntity,
+        TestEntityId(id),
         time,
-        EntityId(id),
     )
 }
 
@@ -43,8 +43,11 @@ data class ExtendEntity(
 )
 
 @JvmInline
-value class EntityId(val raw: Ulid) {
+value class TestEntityId(val raw: Ulid) {
+    fun encodeAsString(): String = raw.toString()
     companion object {
-        fun new(): EntityId = EntityId(Ulid.from(UUID.randomUUID()))
+        fun new(): TestEntityId = TestEntityId(Ulid.from(UUID.randomUUID()))
+
+        fun decode(str: String): TestEntityId = TestEntityId(Ulid.from(str))
     }
 }

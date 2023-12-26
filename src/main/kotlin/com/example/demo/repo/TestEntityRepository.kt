@@ -14,4 +14,12 @@ interface TestEntityRepository : CrudRepository<TestEntity, Ulid>, EntityInforma
         SELECT *, 5 as extend_value FROM entity_table
         """)
     fun getExtendedEntities(): List<ExtendEntity>
+
+    override fun isNew(entity: TestEntity): Boolean = true
+
+    override fun getId(entity: TestEntity): Ulid? = Ulid.from(entity.id.encodeAsString())
+
+    override fun getJavaType(): Class<TestEntity> = TestEntity::class.java
+
+    override fun getIdType(): Class<Ulid> = Ulid::class.java
 }
